@@ -54,7 +54,10 @@ class Entrega {
      * És cert que ∀x,y. P(x,y) -> Q(x) ^ R(y) ?
      */
     static boolean exercici1(int[] universe,BiPredicate<Integer, Integer> p,Predicate<Integer> q,Predicate<Integer> r) {
-
+      if(p.test(x,y)){
+        
+      q.test(x);
+      r.test(x);
       return false; // TO DO
     }
 
@@ -90,12 +93,7 @@ class Entrega {
       // ∀x,y. P(x,y) -> Q(x) ^ R(y)
 
       assertThat(
-          exercici1(
-              new int[] { 2, 3, 5, 6 },
-              (x, y) -> x * y <= 4,
-              x -> x <= 3,
-              x -> x <= 3
-          )
+          exercici1(new int[] { 2, 3, 5, 6 },(x, y) -> x * y <= 4,x -> x <= 3, x -> x <= 3)
       );
 
       assertThat(
