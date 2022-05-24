@@ -54,11 +54,17 @@ class Entrega {
      * És cert que ∀x,y. P(x,y) -> Q(x) ^ R(y) ?
      */
     static boolean exercici1(int[] universe,BiPredicate<Integer, Integer> p,Predicate<Integer> q,Predicate<Integer> r) {
-      if(p.test(x,y)){
-        
-      q.test(x);
-      r.test(x);
-      return false; // TO DO
+        boolean cierto =true; 
+        for (int x : universe) {
+            for (int y : universe) {
+                if (!(p.test(x,y) && (q.test(x) && r.test(y)))) {
+                    cierto = false;
+                }else{
+                    
+                }
+            }
+        }
+        return cierto; // TO DO
     }
 
     /*
