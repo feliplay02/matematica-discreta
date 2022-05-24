@@ -27,7 +27,7 @@ import java.util.Set;
  * Podeu fer aquesta entrega en grups de com a màxim 3 persones, i necessitareu com a minim Java 8.
  * Per entregar, posau a continuació els vostres noms i entregau únicament aquest fitxer.
  * - Nom 1:Felip Torres Reines
- * - Nom 2:
+ * - Nom 2:Jaume Catallops Comas
  * - Nom 3:
  *
  * L'entrega es farà a través d'una tasca a l'Aula Digital abans de la data que se us hagui
