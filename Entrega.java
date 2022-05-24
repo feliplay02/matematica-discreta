@@ -53,11 +53,7 @@ class Entrega {
     /*
      * És cert que ∀x,y. P(x,y) -> Q(x) ^ R(y) ?
      */
-    static boolean exercici1(
-        int[] universe,
-        BiPredicate<Integer, Integer> p,
-        Predicate<Integer> q,
-        Predicate<Integer> r) {
+    static boolean exercici1(int[] universe,BiPredicate<Integer, Integer> p,Predicate<Integer> q,Predicate<Integer> r) {
 
       return false; // TO DO
     }
