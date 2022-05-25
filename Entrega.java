@@ -70,7 +70,34 @@ class Entrega {
      * És cert que ∃!x. ∀y. Q(y) -> P(x) ?
      */
     static boolean exercici2(int[] universe, Predicate<Integer> p, Predicate<Integer> q) {
-      return false; // TO DO
+        boolean xEncontrada = false;
+        boolean cierto = false;
+        for (int x : universe) {
+            if((p.test(x))){
+                cierto = true;
+                if (xEncontrada){
+                    cierto = false;
+                }
+               xEncontrada = true; 
+            }else{
+                boolean xCuenta = true;
+                for (int y : universe) {
+                    if (!(q.test(y))){
+                        xCuenta=false;
+                    }   
+                }
+                if (xCuenta){
+                    cierto = true;
+                    if (xEncontrada){
+                        cierto = false;
+                    }
+                xEncontrada = true; 
+                }
+                 
+            }
+            
+        }
+        return cierto; // TO DO
     }
 
     /*
