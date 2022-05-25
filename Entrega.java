@@ -399,7 +399,15 @@ class Entrega {
      * Podeu suposar que `a`, `b` i `c` són positius.
      */
     static boolean exercici2(int a, int b, int c) {
-      return false; // TO DO
+      
+      //la equación tendra solución si el mcd(a,b) = d divide a c o lo que es lo
+      //mismo, si d|c o también, c modulo d = 0 
+        
+      //aprovechamos el ejecicio uno para calcular el mcd de a y b
+      int d = exercici1(a,b);
+      int restoDe_c_d = c&d;
+        
+      return restoDe_c_d == 0;
     }
 
     /*
