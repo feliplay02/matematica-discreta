@@ -381,7 +381,9 @@ class Entrega {
         //guardamos lo que han pasado del parametro b a de para que la primera
         //interacción del bucle se ejecute adecuadamete
         d = b;
-
+        //si se da el caso que  el primer resto (r) es cero será porqué 
+        //el mcd es igual al número más pequeño introducido por parametro
+        r1 = b;
         while(r != 0){
             r1 = r;
             r = d%r;
