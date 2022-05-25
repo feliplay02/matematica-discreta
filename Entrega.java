@@ -429,14 +429,22 @@ class Entrega {
      */
     static boolean exercici2(int a, int b, int c) {
       
-      //la equación tendra solución si el mcd(a,b) = d divide a c o lo que es lo
-      //mismo, si d|c o también, c modulo d = 0 
+        //la equación tendra solución si el mcd(a,b) = d divide a c o lo que es lo
+        //mismo, si d|c o también, c modulo d = 0 
         
-      //aprovechamos el ejecicio uno para calcular el mcd de a y b
-      int d = exercici1(a,b);
-      int restoDe_c_d = c&d;
+        //aprovechamos el ejecicio uno para calcular el mcd de a y b
+        int d = exercici1(a,b);
+
+        //no me va bien hacerlo con resto así que calculo el resto
+        int cocienteDe_c_d;
+        int restoDe_c_d;
         
-      return restoDe_c_d == 0;
+        cocienteDe_c_d = c/d;
+
+        restoDe_c_d = c-(d*cocienteDe_c_d);
+        
+        //condición de resultado (lo que se haria con un if else)
+        return restoDe_c_d == 0;
     }
 
     /*
