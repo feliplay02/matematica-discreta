@@ -82,7 +82,7 @@ class Entrega {
             }else{
                 boolean xCuenta = true;
                 for (int y : universe) {
-                    if (!(q.test(y))){
+                    if (q.test(y)){
                         xCuenta=false;
                     }   
                 }
