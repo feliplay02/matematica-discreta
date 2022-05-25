@@ -362,7 +362,27 @@ class Entrega {
      * Podeu suposar que `a` i `b` són positius.
      */
     static int exercici1(int a, int b) {
-      return -1; // TO DO
+        //declaramos variables para guardar los resultados de las operaciones
+        //que haremos
+        int d = 0;
+        int r = 0;
+        int r1 = 0;
+        
+        //calcular el primer resto para saber si hay que entrar en el bucle
+        r = a % b;
+        //guardamos lo que han pasado del parametro b a de para que la primera
+        //interacción del bucle se ejecute adecuadamete
+        d = b;
+
+        while(r != 0){
+            r1 = r;
+            r = d%r;
+            d = r1;
+     
+        }  
+        
+      return r1; 
+      
     }
 
     /*
