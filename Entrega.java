@@ -361,6 +361,15 @@ class Entrega {
      * Podeu suposar que `a` i `b` són positius.
      */
     static int exercici1(int a, int b) {
+      
+        int a1 = a;
+        int b1 = b;
+        //comprovar si a es menor a b. Si es así, cambiarlos para que el 
+        //algorismo se puede ejecutar
+        if (a1 < b1){
+            b1 = a1;
+            a1 = b1;
+        }
         //declaramos variables para guardar los resultados de las operaciones
         //que haremos
         int d = 0;
