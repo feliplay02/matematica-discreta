@@ -57,10 +57,9 @@ class Entrega {
         boolean cierto =true; 
         for (int x : universe) {
             for (int y : universe) {
-                if (!(p.test(x,y) && (q.test(x) && r.test(y)))) {
+                 if (p.test(x,y))
+                    if (!((q.test(x) && r.test(y)))) {
                     cierto = false;
-                }else{
-                    
                 }
             }
         }
