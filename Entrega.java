@@ -494,6 +494,7 @@ class Entrega {
     static int[] exercici1(int[][] A) {
       
 
+      //está hecho
       
       
       
