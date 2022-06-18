@@ -453,7 +453,29 @@ class Entrega {
      * Retornau l'invers sempre entre 1 i `n-1`, en cas que no existeixi retornau -1
      */
     static int exercici3(int a, int n) {
-      return -1; // TO DO
+      
+        //guardamos el mcd de a y n en la variable mcd
+        int mcd = exercici1(a, n);
+        
+        //[a] que pertence a "Zn" es invertible si cumple mcd(a,n) = 1, si no lo 
+        //cumple afirmar que no tendrá inversos
+        if (mcd == 1){
+            
+            boolean encontrado = false;
+            
+            for (int i = 1; i<n && (!encontrado);i++){
+                
+                if (((a*i)%n) == 1){
+                    
+                    encontrado = true;
+                    return i;
+                }
+                
+            }
+            
+        }
+            
+        return -1;
     }
 
     /*
