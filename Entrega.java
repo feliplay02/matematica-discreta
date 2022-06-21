@@ -571,8 +571,7 @@ class Entrega {
             if (numAristas%2!=0)//compruba si el grado es impar
                 euleria = false;
         }
-        return euleria;
-      return false; 
+        return euleria; 
     }
 
     /*
