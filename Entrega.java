@@ -107,7 +107,40 @@ class Entrega {
      * que cada un d'ells està ordenat de menor a major.
      */
     static boolean exercici3(int[][] universe) {
-      return false; // TO DO
+        for (int i = 0; i < universe.length-1  ; i++) {
+            //Creamos un array para almacenar los elementos de un array de la lista,
+            //otro para almacenar los del siguiente a este y un ultimo para almacenar
+            //booleanos que indicaran si el elemento en la posicion j del arrayY 
+            //ha sido encontrado en el arrayX
+            int[] arrayX=new int[universe[i].length];
+            int[] arrayY=new int[universe[i+1].length];
+            boolean[] encontrado= new boolean[arrayY.length];
+            //almacenamos los elementos en los arrays correspondientes
+            for (int j = 0; j < universe[i].length ; j++) {
+                arrayX[j]= universe[i][j];
+            }
+            for (int j = 0; j < universe[i+1].length ; j++) {
+                arrayY[j]= universe[i+1][j];
+            }
+            //comprueba si el elemento de arrayY esta en el arrayX
+            for (int j = 0;j < arrayX.length;j++){
+                for (int n = 0; n < arrayY.length;n++){
+                    if(arrayY[n]==arrayX[j]){
+                        encontrado[n]=true;
+                    }
+                        
+                }
+                
+            }
+            //analiza si no ha encontrado algun elemento y si no lo encuentra significara
+            //que ∃y tal que ¬(y ⊆ x) por lo tanto es cierto.
+            for (int j = 0; j < encontrado.length;j++){
+                if(!encontrado[j]){
+                    return true;
+                }
+            } 
+        }
+        return false;
     }
 
     /*
