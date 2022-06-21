@@ -568,8 +568,10 @@ class Entrega {
                 }
 
             }
-            if (numAristas%2!=0)//compruba si el grado es impar
+            if (numAristas%2!=0){//compruba si el grado es impar
                 euleria = false;
+            }
+            numAristas=0;
         }
         return euleria; 
     }
