@@ -7,6 +7,8 @@ import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 import java.util.Set;
 
+//Autors: Felip Torres Reines i Jaume Cantallops Comas
+
 /*
  * Aquesta entrega consisteix en implementar tots els mètodes annotats amb el comentari "// TO DO".
  *
