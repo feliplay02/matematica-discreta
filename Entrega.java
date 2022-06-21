@@ -210,7 +210,26 @@ class Entrega {
      * tant `a` com cada un dels elements de `p` està ordenat de menor a major.
      */
     static boolean exercici1(int[] a, int[][] p) {
-      return false; // TO DO
+        //Array donde almacenaremos true si ese valor se ha encontrado en un conjunto
+        boolean[] encontrado=new boolean[a.length];
+        for (int i = 0;i<p.length;i++){
+            for (int j = 0;j<p[i].length;j++){
+                for (int n= 0;n<a.length;n++) {
+                    if(p[i][j]==a[n]&&encontrado[n]==false){
+                        encontrado[n]=true;
+                    }else if(p[i][j]==a[n]&&encontrado[n]==true){
+                        return false;
+                    }
+                }
+            }
+        }
+        for(int i=0; i<a.length;i++){
+            if(!encontrado[i]){
+                return false;
+            }
+        }
+      return true;
+    }
     }
 
     /*
