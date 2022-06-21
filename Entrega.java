@@ -514,20 +514,65 @@ class Entrega {
      * Donada una matriu d'adjacencia `A` d'un graf no dirigit, retornau l'ordre i la mida del graf.
      */
     static int[] exercici1(int[][] A) {
-      
+        //crear un array para la solucion
+        //en la posición 0 del array se guardarla el orden y en la 1 se guardara
+        //la mida del grafo
+        int [] grafo = new int [2];
 
-      //está hecho
-      
-      
-      
-      return new int[]{}; // TO DO
+        //crear un array de booleaos para no contar la misma aresta
+        //por defecto todas las componentes se inicializan a false
+        boolean [][] aristas = new boolean [A.length][A[0].length];
+
+       //crear un contador de las aristas
+       int numAristas = 0;
+
+
+        for (int i = 0;i<A.length;i++){
+
+            for (int j = 0;j<A[0].length;j++){
+
+                if(aristas[i][j] == false && A[i][j] == 1){
+                    numAristas++;
+                    aristas[i][j] = true;
+                    aristas[j][i] = true;
+                }
+
+            }
+
+        }
+        
+
+        //orden del grafo
+        grafo[0] = A.length;
+        System.out.println("orden = "+grafo[0]);
+        //mida del grafo
+        grafo[1] = numAristas;
+        System.out.println("mida = "+numAristas);
+        return grafo;
     }
 
     /*
      * Donada una matriu d'adjacencia `A` d'un graf no dirigit, digau si el graf es eulerià.
      */
     static boolean exercici2(int[][] A) {
-      return false; // TO DO
+        Boolean euleria=true;
+      
+        //crear un contador de las aristas
+        int numAristas = 0;
+
+
+        for (int i = 0;i<A.length;i++){
+            for (int j = 0;j<A[0].length;j++){
+                if( A[i][j] == 1){
+                    numAristas++;
+                }
+
+            }
+            if (numAristas%2!=0)//compruba si el grado es impar
+                euleria = false;
+        }
+        return euleria;
+      return false; 
     }
 
     /*
