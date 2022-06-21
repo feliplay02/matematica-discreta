@@ -280,7 +280,18 @@ class Entrega {
      * que `y` pertany a `codom` i que tant `dom` com `codom` també estàn ordenats de menor a major.
      */
     static int[] exercici3(int[] dom, int[] codom, Function<Integer, Integer> f, int y) {
-      return new int[]{}; // TO DO
+      int[] antiImagen=new int[dom.length];
+        for(int i = 0;i<dom.length;i++){
+            int n=0;
+            if(f.apply(i)==y){
+                antiImagen[n]=i;
+                n++;
+            }
+        }
+        for(int i = 0;i<antiImagen.length;i++){
+            System.out.println(antiImagen[i]);
+        }    
+        return antiImagen;
     }
 
     /*
