@@ -601,7 +601,24 @@ class Entrega {
      *
      */
     static int exercici3(int n, int d) {
-      return -1; // TO DO
+        //variable que representa los nodos totales
+        int nt= 0;
+        //variable que representa los nodos por encima de las ojas (cada oja
+        //tiene una arista hacia el nodo anterior)
+        int nPorEncima = n;
+        
+        
+        while (true){
+        
+            nt += nPorEncima - nPorEncima%d;
+            nPorEncima = nPorEncima/d + nPorEncima%d;
+            
+            if (nPorEncima == 1) {
+                
+                //sumamos uno porque tenemos que contar el nodo de la raiz
+                return nt + 1;
+            }
+        }
     }
 
     /*
