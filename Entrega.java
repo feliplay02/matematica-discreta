@@ -685,10 +685,10 @@ class Entrega {
 
         //orden del grafo
         grafo[0] = A.length;
-        System.out.println("orden = "+grafo[0]);
+  
         //mida del grafo
         grafo[1] = numAristas;
-        System.out.println("mida = "+numAristas);
+       
         return grafo;
     }
 
