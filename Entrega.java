@@ -65,7 +65,7 @@ class Entrega {
                 }
             }
         }
-        return cierto; // TO DO
+        return cierto;
     }
 
     /*
@@ -99,7 +99,7 @@ class Entrega {
             }
             
         }
-        return cierto; // TO DO
+        return cierto;
     }
 
     /*
@@ -273,7 +273,54 @@ class Entrega {
      * Podeu soposar que `x` pertany a `a` i que `a` està ordenat de menor a major.
      */
     static boolean exercici2(int[] a, int[][] rel, int x) {
-      return false; // TO DO
+        boolean[] encontrados=new boolean[a.length];
+        //compruba si es reflexiva si no lo es devuelve falso        
+        for (int i=0;i<a.length;i++){
+            for (int j=0;j<rel.length;j++){
+                if (rel[j][0]==a[i]&&rel[j][1]==a[i]){
+                    encontrados[i]=true;
+                }
+            }
+        }
+        for (int i=0;i<encontrados.length;i++){
+            if(!encontrados[i]){
+                return false;
+            }
+        }
+        //compruba si es antisimetrica
+        for (int i=0;i<rel.length;i++){
+            int[] relacion=new int[2];
+            relacion[0]=rel[i][0];
+            relacion[1]=rel[i][1];
+            for (int j=0;j<rel.length;j++){
+                if(rel[j][1]==relacion[0]&&rel[j][0]==relacion[1]&&rel[j][1]!=rel[j][0]){
+                    return false;
+                }
+            }
+        }
+        //comprueba si es transitiva
+        for (int i=0;i<rel.length;i++){
+            int[] relacion=new int[2];
+            relacion[0]=rel[i][0];
+            relacion[1]=rel[i][1];
+            for (int j=0;j<rel.length;j++){
+                if(rel[j][0]==relacion[1]){
+                    boolean encontrado;
+                    int relacion2=rel[j][1]; 
+                    for (int n=0;n<rel.length;n++){
+                        if (rel[n][0]==relacion[0]&&rel[n][1]==relacion2){
+                            encontrado=true;
+                            if (!encontrado)
+                                return false;
+                        }
+                    }
+                    
+                }
+                
+            }
+        }
+        
+      return true; 
     }
 
     /*
