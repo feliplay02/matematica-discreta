@@ -312,7 +312,36 @@ class Entrega {
     static final int BIJECTIVE = INJECTIVE + SURJECTIVE;
 
     static int exercici4(int[] dom, int[] codom, Function<Integer, Integer> f) {
-      return -1; // TO DO
+        boolean injectiva = true;
+        boolean exhaustiva = true;
+        boolean bijectiva = true;
+        
+        boolean[] encontrado=new boolean[codom.length];
+        for(int i=0;i<codom.length;i++){
+            for(int j=0;j<codom.length;j++){
+                if(f.apply(i)==codom[j]&&encontrado[j]==false){
+                    encontrado[j]=true;
+                }else if(f.apply(i)==codom[j]&&encontrado[j]==true){
+                    injectiva=false;
+                    bijectiva=false;
+                }
+            }
+        }
+        for(int i=0;i<encontrado.length;i++){
+            if(!encontrado[i]){
+                exhaustiva=false;
+                bijectiva=false;  
+            }
+        }
+        if(bijectiva){
+            return 3;
+        }else if(exhaustiva){
+            return 2;
+        }else if(injectiva){
+            return 1;
+        }else{
+            return 0;
+        }
     }
 
     /*
